@@ -8,6 +8,7 @@ public class BrowserActions {
     @Test
     public void navigateToGoogle() {
         driver = new ChromeDriver();
+        maximize();
         navigateTo("https://google.com");
         navigateTo("https://bing.com");
         navigateBack();
@@ -35,5 +36,13 @@ public class BrowserActions {
 
     public void refreshPage() {
         driver.navigate().refresh();
+    }
+
+    public void maximize() {
+        driver.manage().window().maximize();
+    }
+
+    public void minimize() {
+        driver.manage().window().minimize();
     }
 }
