@@ -12,6 +12,7 @@ public class BrowserActions {
         navigateTo("https://bing.com");
         navigateBack();
         navigateForward();
+        refreshPage();
     }
 
     public void navigateTo(String url) {
@@ -30,5 +31,9 @@ public class BrowserActions {
         if (driver != null) {
             driver.quit();
         }
+    }
+
+    public void refreshPage() {
+        driver.navigate().refresh();
     }
 }
