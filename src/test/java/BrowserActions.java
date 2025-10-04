@@ -50,4 +50,8 @@ public class BrowserActions {
     public void setSize(int width, int height) {
         driver.manage().window().setSize(new Dimension(width, height));
     }
+
+    public void fullscreen() {
+        driver.manage().window().fullscreen();
+    }
 }
