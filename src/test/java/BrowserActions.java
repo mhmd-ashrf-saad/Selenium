@@ -1,3 +1,4 @@
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
@@ -44,5 +45,9 @@ public class BrowserActions {
 
     public void minimize() {
         driver.manage().window().minimize();
+    }
+
+    public void setSize(int width, int height) {
+        driver.manage().window().setSize(new Dimension(width, height));
     }
 }
