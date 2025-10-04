@@ -8,6 +8,21 @@ public class BrowserActions {
     @Test
     public void navigateToGoogle() {
         driver = new ChromeDriver();
-        driver.get("https://www.Google.com/");
+        navigateTo("https://google.com");
+        navigateTo("https://bing.com");
+        navigateBack();
+        navigateForward();
+    }
+
+    public void navigateTo(String url) {
+        driver.navigate().to(url);
+    }
+
+    public void navigateBack() {
+        driver.navigate().back();
+    }
+
+    public void navigateForward() {
+        driver.navigate().forward();
     }
 }
