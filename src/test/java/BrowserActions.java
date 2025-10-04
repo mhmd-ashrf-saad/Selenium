@@ -25,4 +25,10 @@ public class BrowserActions {
     public void navigateForward() {
         driver.navigate().forward();
     }
+
+    public void closeBrowser() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
 }
