@@ -10,11 +10,6 @@ public class BrowserActions {
     public void navigateToGoogle() {
         driver = new ChromeDriver();
         maximize();
-        navigateTo("https://google.com");
-        navigateTo("https://bing.com");
-        navigateBack();
-        navigateForward();
-        refreshPage();
     }
 
     public void navigateTo(String url) {
@@ -53,5 +48,9 @@ public class BrowserActions {
 
     public void fullscreen() {
         driver.manage().window().fullscreen();
+    }
+
+    public void getCurrentUrl() {
+        System.out.println("Current URL: " + driver.getCurrentUrl());
     }
 }
