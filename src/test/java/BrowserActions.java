@@ -10,6 +10,11 @@ public class BrowserActions {
     public void navigateToGoogle() {
         driver = new ChromeDriver();
         maximize();
+        navigateTo("https://www.google.com");
+        getCurrentUrl();
+        getTitle();
+        getPageSource();
+        closeBrowser();
     }
 
     public void navigateTo(String url) {
@@ -52,5 +57,15 @@ public class BrowserActions {
 
     public void getCurrentUrl() {
         System.out.println("Current URL: " + driver.getCurrentUrl());
+    }
+
+    public void getTitle() {
+        String title = driver.getTitle();
+        System.out.println("Page Title: " + title);
+    }
+
+    public void getPageSource() {
+        String pageSource = driver.getPageSource();
+        System.out.println("Page Source: " + pageSource);
     }
 }
