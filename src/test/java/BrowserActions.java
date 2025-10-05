@@ -1,5 +1,6 @@
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
@@ -11,10 +12,9 @@ public class BrowserActions {
         driver = new ChromeDriver();
         maximize();
         navigateTo("https://www.google.com");
-        getCurrentUrl();
-        getTitle();
-        getPageSource();
-        closeBrowser();
+        driver.switchTo().newWindow(WindowType.TAB);
+
+        closeCurrentTab();
     }
 
     public void navigateTo(String url) {
@@ -67,5 +67,14 @@ public class BrowserActions {
     public void getPageSource() {
         String pageSource = driver.getPageSource();
         System.out.println("Page Source: " + pageSource);
+    }
+
+    public void getWindowHandle() {
+        String windowHandle = driver.getWindowHandle();
+        System.out.println("Window Handle: " + windowHandle);
+    }
+
+    public void closeCurrentTab() {
+        driver.close();
     }
 }
